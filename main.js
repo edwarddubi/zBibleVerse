@@ -1,4 +1,4 @@
-import {config} from './config.js'
+//import {config} from './config.js'
 import {getBibleVerse} from './bibleVerse.js'
 import Discord from 'discord.js'
 //const Discord = require("discord.js");
@@ -6,7 +6,7 @@ import Discord from 'discord.js'
 
 const client  = new Discord.Client();
 
-const token = config.botToken;
+//const token = config.botToken;
 const prefix = "#";
 
 client.once("ready", () => {
@@ -35,4 +35,5 @@ client.on("message",  message => {
 })
 
 
-client.login(token);
+//client.login(token);
+client.login(process.env.BOT_TOKEN);
