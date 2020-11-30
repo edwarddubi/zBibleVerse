@@ -1,14 +1,15 @@
 {
-  "name": "zMusik",
+  "name": "zBibleVerse",
   "version": "1.0.0",
-  "description": "the beginning of a bot",
+  "description": "Find Bible verses",
   "type": "module",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
   },
-  "author": "Edward",
-  "license": "ISC",
+  "author": "Edward Mensah",
+  "license": "MIT",
   "dependencies": {
     "bible.js": "^4.0.2",
     "discord.js": "^12.5.1"

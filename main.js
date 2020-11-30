@@ -7,7 +7,7 @@ import Discord from 'discord.js'
 const client  = new Discord.Client();
 
 const token = config.botToken;
-const prefix = "+";
+const prefix = "#";
 
 client.once("ready", () => {
     console.log("zBibleVerse is now online!")
@@ -17,16 +17,13 @@ client.on("message",  message => {
     if(!message.content.startsWith(prefix) || message.author.bot){
         return;
     }
-    const args = message.content.slice(prefix.length).split("#");
+    const args = message.content.slice(prefix.length).split("+");
     args.forEach(element => {
+        let results = "" + element.toUpperCase() + "\n";
         getBibleVerse(element).then((data) => {
-
-            let results = "";
             (data || []).forEach(c => {
                results+=c.verse + " | " + c.text + "\n"
             })
-
-            results+="------------JESUS BE GLORIFIED-----------\n";
             
             message.channel.send(results)
         }).catch(err => {
